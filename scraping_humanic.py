@@ -67,7 +67,22 @@ def wheel_around_element(driver, element, radius: int, duration_sec: int = 2) ->
     # Perform the built actions
     actions.perform()
 
+"""
+Performs a wheel movement around an element specified by the given XPath.
 
+Args:
+    driver (WebDriver): The WebDriver instance used to interact with the browser.
+    xpath (str): The XPath expression to locate the element.
+    radius (int): The radius of the circle to move around.
+    duration_sec (int, optional): The duration of the wheel movement in seconds. Defaults to 2.
+
+Returns:
+    None: This function does not return anything.
+
+Raises:
+    NoSuchElementException: If the element specified by the XPath cannot be found.
+
+"""
 def wheel_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -> None:
 
     # Get the element to start the movement from
