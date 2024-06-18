@@ -22,7 +22,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
 from print_helpers.helpers import print_fatal, print_info, set_log_level, INFO
-from scraping_humanic.scraping_humanic import move_from_xpath_to_xpath
+from scraping_humanic.scraping_humanic import move_from_element_to_element
 
 import config         # DRIVER_PATH
 from test_02_xpath import URL, BUTTONS
@@ -46,7 +46,7 @@ def test_02():
 
     print_info( "found buttons, moving" )
 
-    move_from_xpath_to_xpath( driver, elems[0], elems[1] )
+    move_from_element_to_element( driver, elems[0], elems[1] )
 
     print_info( "done" )
 
