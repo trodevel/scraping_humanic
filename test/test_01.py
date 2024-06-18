@@ -52,7 +52,7 @@ def test_01():
         print_fatal( "broken xpath" )
         exit()
 
-    print_info( "found xpath, rotating" )
+    print_info( "found xpath, wheeling" )
 
     wheel_around_xpath( driver, PATH, 100 )
 
