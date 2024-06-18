@@ -37,7 +37,7 @@ def calc_delay(duration_sec: int, step_angle: int ) -> float:
 ##########################################################
 
 
-def round_around(driver, xpath: str, radius: int, duration_sec: int = 2) -> None:
+def round_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -> None:
 
     assert radius > 0
 
