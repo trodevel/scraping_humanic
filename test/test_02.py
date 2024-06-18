@@ -19,6 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 '''
+from time import sleep
 
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
 from print_helpers.helpers import print_fatal, print_info, set_log_level, INFO
@@ -44,9 +45,23 @@ def test_02():
         print_fatal( f"cannot find 3 buttons, found {len( elems )} buttons" )
         exit()
 
-    print_info( "found buttons, moving" )
+    print_info( "found buttons, moving 1" )
 
-    move_from_element_to_element( driver, elems[0], elems[1] )
+    move_from_element_to_element(driver, elems[0], elems[1])
+
+    sleep(1)
+
+    print_info( "found buttons, moving 2" )
+
+    move_from_element_to_element(driver, elems[1], elems[2])
+
+    sleep(1)
+
+    print_info( "found buttons, moving 3" )
+
+    move_from_element_to_element(driver, elems[2], elems[0])
+
+    sleep(1)
 
     print_info( "done" )
 
