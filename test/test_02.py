@@ -49,19 +49,13 @@ def test_02():
 
     move_from_element_to_element(driver, elems[0], elems[1])
 
-    sleep(1)
-
     print_info( "found buttons, moving 2" )
 
     move_from_element_to_element(driver, elems[1], elems[2])
 
-    sleep(1)
-
     print_info( "found buttons, moving 3" )
 
     move_from_element_to_element(driver, elems[2], elems[0])
-
-    sleep(1)
 
     print_info( "done" )
 
