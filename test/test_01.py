@@ -56,7 +56,7 @@ def test_01():
 
     wheel_around_xpath( driver, PATH, 100 )
 
-    print_info( "found xpath, rotating" )
+    print_info( "done" )
 
 ##########################################################
 
