@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
-from print_helpers.helpers import print_fatal, print_debug
+from print_helpers.helpers import print_fatal, print_debug, set_log_level, DEBUG
 
 import config         # DRIVER_PATH
 from test_01_xpath import URL, BANNER, PATH
@@ -59,6 +59,7 @@ def test_01():
 
 def main():
 
+    set_log_level( DEBUG )
     test_01()
 
 ##########################################################
