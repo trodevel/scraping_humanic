@@ -91,6 +91,26 @@ def wheel_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -
     wheel_around_element( driver, element, radius, duration_sec )
 
 
+def move_to_element(driver, element, duration_sec: int = 1) -> None:
+
+    # Create an Actions object
+    actions = ActionChains(driver)
+
+    # Build the action: move from start element to end element
+    actions. \
+        pause(duration_sec).\
+        move_to_element(element).\
+        perform()
+
+
+def move_to_xpath(driver, xpath: str, duration_sec: int = 1) -> None:
+
+    # Get the element to start the movement from
+    element = driver.find_element( 'xpath', xpath )
+
+    move_to_element( driver, element, duration_sec )
+
+
 def move_from_element_to_element(driver, element_from, element_to , duration_sec: int = 1) -> None:
 
     # Create an Actions object
