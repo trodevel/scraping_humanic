@@ -23,6 +23,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
 
 import config         # DRIVER_PATH
+from test_01_xpath import URL, PATH
 
 ##########################################################
 
@@ -33,7 +34,7 @@ def test_01():
 
     driver = helpers.init_driver( config.DRIVER_PATH, config.BROWSER_BINARY )
 
-    driver.get( "https://www.google.de" )
+    driver.get( URL )
 
     helpers.sleep( wait_min * 60 )
 
