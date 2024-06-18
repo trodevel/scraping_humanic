@@ -24,7 +24,7 @@ from scraping_helpers import helpers  # does_xpath_exist_with_timeout
 from print_helpers.helpers import print_fatal
 
 import config         # DRIVER_PATH
-from test_01_xpath import URL, PATH
+from test_01_xpath import URL, BANNER, PATH
 
 ##########################################################
 
@@ -36,6 +36,10 @@ def test_01():
     driver = helpers.init_driver( config.DRIVER_PATH, config.BROWSER_BINARY )
 
     driver.get( URL )
+
+    banner = helpers.find_element_by_xpath_with_timeout( driver, BANNER, 5 )
+
+    helpers.wait_till_clickable_and_click( banner, 5 )
 
     if not helpers.does_xpath_exist_with_timeout(driver, PATH, 10):
         print_fatal( "broken xpath" )
