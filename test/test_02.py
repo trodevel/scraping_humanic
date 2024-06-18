@@ -40,8 +40,8 @@ def test_02():
 
     elems = helpers.find_elements_by_xpath_with_timeout( driver, BUTTONS, 5 )
 
-    if len( elems ) != 2:
-        print_fatal( f"cannot find 2 buttons, found {len( elems )} buttons" )
+    if len( elems ) != 3:
+        print_fatal( f"cannot find 3 buttons, found {len( elems )} buttons" )
         exit()
 
     print_info( "found buttons, moving" )
