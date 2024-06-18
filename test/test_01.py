@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
-from print_helpers.helpers import print_fatal
+from print_helpers.helpers import print_fatal, print_debug
 
 import config         # DRIVER_PATH
 from test_01_xpath import URL, BANNER, PATH
@@ -39,11 +39,19 @@ def test_01():
 
     banner = helpers.find_element_by_xpath_with_timeout( driver, BANNER, 5 )
 
+    if not banner:
+        print_fatal( "cannot find banner" )
+        exit()
+
+    print_debug( "found banner, clicking" )
+
     helpers.wait_till_clickable_and_click( banner, 5 )
 
     if not helpers.does_xpath_exist_with_timeout(driver, PATH, 10):
         print_fatal( "broken xpath" )
         exit()
+
+    print_debug( "found xpath" )
 
     helpers.sleep( wait_min * 60 )
 
