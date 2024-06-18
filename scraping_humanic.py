@@ -37,16 +37,13 @@ def calc_delay(duration_sec: int, step_angle: int ) -> float:
 ##########################################################
 
 
-def round_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -> None:
+def round_around_element(driver, element, radius: int, duration_sec: int = 2) -> None:
 
     assert radius > 0
 
     step_angle = 10
 
     delay = calc_delay(duration_sec, step_angle)
-
-    # Get the element to start the movement from
-    element = driver.find_element( 'xpath', xpath )
 
     # Create an Actions object
     actions = ActionChains(driver)
@@ -69,5 +66,14 @@ def round_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -
 
     # Perform the built actions
     actions.perform()
+
+
+def round_around_xpath(driver, xpath: str, radius: int, duration_sec: int = 2) -> None:
+
+    # Get the element to start the movement from
+    element = driver.find_element( 'xpath', xpath )
+
+    round_around_element( driver, element, radius, duration_sec )
+
 
 ##########################################################
