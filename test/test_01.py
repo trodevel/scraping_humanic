@@ -22,7 +22,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from scraping_helpers import helpers  # does_xpath_exist_with_timeout
 from print_helpers.helpers import print_fatal, print_debug, set_log_level, DEBUG
-from scraping_humanic.scraping_humanic import round_around_xpath
+from scraping_humanic.scraping_humanic import wheel_around_xpath
 
 import config         # DRIVER_PATH
 from test_01_xpath import URL, BANNER, PATH
@@ -54,7 +54,7 @@ def test_01():
 
     print_debug( "found xpath, rotating" )
 
-    round_around_xpath( driver, PATH, 100 )
+    wheel_around_xpath( driver, PATH, 100 )
 
     helpers.sleep( wait_min * 60 )
 
